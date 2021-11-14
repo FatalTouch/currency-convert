@@ -57,6 +57,7 @@ const CurrencyConverterForm = ({
             <div className={formFieldsContainer}>
                 <div className={formFieldStyle}>
                     <Input
+                        data-testid="amount-input"
                         prefix={getSymbolFromCurrency(values.from)}
                         type="text"
                         name="amount"

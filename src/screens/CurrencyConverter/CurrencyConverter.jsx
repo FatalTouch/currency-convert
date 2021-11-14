@@ -34,7 +34,7 @@ const CurrencyConverter = () => {
                 validate={values => {
                     const errors = {};
                     const amount = parseFloat(values.amount);
-                    if (!amount || !_.isNumber(amount) || amount < 1) {
+                    if (!amount || !_.isNumber(amount) || amount <= 0) {
                         errors.amount = 'Invalid Amount';
                     }
                     if (_.isEmpty(values.to)) {

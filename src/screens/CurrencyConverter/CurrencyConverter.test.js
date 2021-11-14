@@ -1,4 +1,5 @@
-import { screen, act, cleanup, fireEvent, waitFor } from '@testing-library/react';
+import { screen, act, fireEvent, waitFor } from '@testing-library/react';
+import userEvent, { specialChars } from "@testing-library/user-event";
 import { render } from '../../testing/utils/render';
 import CurrencyConverter from './CurrencyConverter';
 import App from '../../App';
@@ -79,4 +80,22 @@ test('expect base currency to be set correctly', async () => {
 
     const baseCurrencyText = screen.getByText("Base Currency: ALL");
     expect(baseCurrencyText).toBeInTheDocument();
+});
+
+test('expect invalid amount error if amount is zero', async () => {
+    act(() => {
+        render(<App />);
+    });
+
+    await waitFor(async () => {
+        const input = screen.queryByTestId("amount-input");
+        fireEvent.change(input, { target: { value: "0" } });
+    });
+
+    await waitFor(async () => {
+        fireEvent.click(screen.queryByTestId("convert-button"));
+    });
+
+    const invalidAmountText = screen.getByText(/Invalid Amount/i);
+    expect(invalidAmountText).toBeInTheDocument();
 });
