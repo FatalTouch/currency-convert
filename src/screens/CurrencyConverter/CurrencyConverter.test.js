@@ -45,7 +45,7 @@ test('conversion result is visible after clicking convert and result is accurate
 
     await waitFor(async () => {
         fireEvent.click(screen.queryByTestId("convert-button"));
-    });
+    }, { timeout: 1000 });
 
     const resultTextElement = screen.getByText(/1 United States Dollar = 475.60 Armenian Dram/i);
     expect(resultTextElement).toBeInTheDocument();
