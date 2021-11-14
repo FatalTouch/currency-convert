@@ -6,7 +6,7 @@ import {
 import moment from "moment";
 
 const INITIAL_STATE = {
-    currencyList: [],
+    currencyList: {},
     hasError: false,
     isLoading: false,
     expiresOn: null
