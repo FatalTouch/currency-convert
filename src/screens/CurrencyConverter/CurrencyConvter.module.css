@@ -1,0 +1,95 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.formContainer {
+    height: 160px;
+    width: 750px;
+    box-shadow: 0 0 8px 0 rgba(113, 109, 109, 0.3);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.baseCurrencyTextStyle {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.formFieldsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.formFieldStyle {
+    width: 200px;
+    margin-left: 20px;
+    position: relative;
+}
+
+.conversionResultStyle {
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+.marginStyle {
+    margin-left: 20px;
+}
+
+.buttonsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.errorTextStyle {
+    position: absolute;
+    color: #ff715b;
+    top: 30px;
+    left: 0;
+}
+
+@media screen and (max-width: 767px) {
+    .formContainer {
+        width: 90%;
+        flex-direction: column;
+        height: 400px;
+        justify-content: center;
+    }
+
+    .formFieldsContainer {
+        flex-direction: column;
+    }
+
+    .formFieldStyle, .buttonStyle, .marginStyle {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+
+    .buttonStyle {
+        width: 175px;
+    }
+
+    .buttonsContainer {
+        flex-direction: column;
+        margin-top: 25px;
+    }
+
+    .errorTextStyle {
+        position: relative;
+        top: inherit;
+        bottom: inherit;
+    }
+
+    .conversionResultStyle {
+        text-align: center;
+    }
+}
