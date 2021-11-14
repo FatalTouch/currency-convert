@@ -59,7 +59,7 @@ const CurrencyConverterForm = ({
                     <Input
                         data-testid="amount-input"
                         prefix={getSymbolFromCurrency(values.from)}
-                        type="text"
+                        type="number"
                         name="amount"
                         placeholder="Amount"
                         onChange={handleChange}
