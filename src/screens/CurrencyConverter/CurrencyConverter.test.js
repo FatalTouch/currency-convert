@@ -1,5 +1,4 @@
 import { screen, act, fireEvent, waitFor } from '@testing-library/react';
-import userEvent, { specialChars } from "@testing-library/user-event";
 import { render } from '../../testing/utils/render';
 import CurrencyConverter from './CurrencyConverter';
 import App from '../../App';
